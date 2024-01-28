@@ -42,3 +42,10 @@ class Ball:
     def draw(self, screen):
         pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), BALL_RADIUS)
 
+
+balls = [Ball(random.randint(BALL_RADIUS, SCREEN_WIDTH - BALL_RADIUS),
+              random.randint(BALL_RADIUS, SCREEN_HEIGHT - BALL_RADIUS),
+              (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
+         for _ in range(NUM_BALLS)]
+
+main_ball = Ball(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2, WHITE)
